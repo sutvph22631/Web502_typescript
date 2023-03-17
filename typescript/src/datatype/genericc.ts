@@ -40,39 +40,42 @@ const arrStr = ["Quang","Quy","Hau","Duc"] //Fibonacci
 
 // console.log(result);
 
+const ArrNum2 = [4,1,8,6,28,15,-19,-1]
+const ArrStr = ["a","ed","bc","ff"]
 
-const ArrNum2 = [4,1,8,6,28,15,-19,-1];
-ArrNum2.sort();
+// ArrNum2.sort((a,b)=>{
+//     return a-b
+// })
+// console.log(ArrNum2);
+
+function selectionSort<u> (arr: u[], callback:(a:u, b:u) => boolean){
+    for(let i =0;i<arr.length-1;i++){
+        for(let j=i +1; j< arr.length; j++){
+            if(callback(arr[i] , arr[j])){
+                let temp = arr[i]
+                arr[i] = arr[j]
+                arr[j] = temp
+            }
+        }
+    }
+}
+
+selectionSort<number>(ArrNum2, (a,b) => {
+    return a>b
+})
 console.log(ArrNum2);
+
+
+
+// const ArrNum2 = [4,1,8,6,28,15,-19,-1];
+// ArrNum2.sort();
+// console.log(ArrNum2);
 
 // const ArrStr = ["a","ed","bc","ff"];
 // ArrStr.sort();
 // console.log(ArrStr);
 
-ArrNum2.sort((a,b)=>{
-    return b-a
-})
-
-// Cách 2
-// const arrNum2 = [13,1,3,5,8,2] //Fibonacci
-// const arrStr2 = ["b", "cb", "ab", "e"]
-// arrNum2.sort((a, b) => {
-//     return b - a
+// ArrNum2.sort((a,b)=>{
+//     return a-b
 // })
 
-// // console.log(arrNum2);
-
-// function selectionSort(arr) {
-//     for(let i = 0; i < arr.length - 1; i ++) {
-//         for(let j = i + 1; j < arr.length; j++) {
-//             if (arr[i] < arr[j]) {
-//                 let temp = arr[i]
-//                 arr[i] = arr[j]
-//                 arr[j] = temp
-//             }
-//         }
-//     }
-// }
-
-// selectionSort(arrStr2)
-// console.log(arrStr2);
